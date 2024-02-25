@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <label for="cr_code">Enter QR Code Data:</label>
+        <input id="cr_code" type="search" placeholder="E.g., Your QR Code Data">
+        <button onclick="generateQrcode()">Generate QR Code</button>
+        <br>
+        <img src="https://play-lh.googleusercontent.com/gfXcCyd98v83B3_OAr77S3EwsIGg8LyCYLuItRXhyi3SCHEeQg0kfL4M9uuksPL_rD8" id="img" alt="Generated QR Code">
+        <br>
+        <button class="mode-button" onclick="toggleMode()">dark mode</button>
+    </div>
+
+    
+    <script src="./app.js"></script>
+</body>
+</html>
