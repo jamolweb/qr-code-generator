@@ -11,6 +11,23 @@ document.getElementById("cr_code").addEventListener("keydown", (e) => {
   }
 });
 
+document
+        .getElementById("downloadBtn")
+        .addEventListener("click", async () => {
+          const url =  document.getElementById("img").src
+          const response = await fetch(url);
+          const blob = await response.blob();
+          const filename = "qr-code.png";
+
+          const link = document.createElement("a");
+          link.href = window.URL.createObjectURL(blob);
+          link.download = filename;
+
+          link.click();
+
+          window.URL.revokeObjectURL(link.href);
+        });
+
 const generateQrcode = () => {
   if (value && value.length > 0) {
     const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${value}`;
